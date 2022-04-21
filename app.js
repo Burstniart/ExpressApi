@@ -26,6 +26,13 @@ app.get('/v1/explorers/:id', (req, res) => {
     const explorer = {id: 1, name: "Monika"}
     res.status(200).json(explorer)
 })
+// POST Create endpoint to create "explorer"
+app.post('/v1/explorers', (req, res) => {
+    console.log(`Api Explorers POST request ${new Date()}`)
+    // Client parameter
+    const requestBody = req.body
+    res.status(201).json({message: 'Created'})
+})
 
 // Initialize app
 app.listen(port, () => {
